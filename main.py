@@ -53,13 +53,24 @@ time.sleep(1)
 # Login
 elem = browser.find_element(By.NAME, "email")
 elem.clear()
-elem.send_keys("blah")
+elem.send_keys("")
 time.sleep(2)
 elem = browser.find_element(By.NAME, "passwd")
 elem.clear()
-elem.send_keys("Blah")
+elem.send_keys("")
 time.sleep(4)
-
 elem = browser.find_element(By.NAME, "submitLogin")
+scrollclick(elem)
+time.sleep(5)
+
+# Import CSV section
+url = 'http://regaliashop.es/admin945fg3h1k/index.php?controller=AdminImport&token=2e2961702497168112e4c3c2acb86155'
+browser.get(url)
+time.sleep(2)
+
+elem = browser.find_element(By.ID, "file-add-button")
+scrollclick(elem)
+
+
 
 # browser.close()

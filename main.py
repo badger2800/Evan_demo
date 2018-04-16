@@ -64,13 +64,18 @@ elem = browser.find_element(By.NAME, "submitLogin")
 scrollclick(elem)
 time.sleep(5)
 
+
 # Import CSV section
 url = 'http://regaliashop.es/admin945fg3h1k/index.php?controller=AdminImport&token=2e2961702497168112e4c3c2acb86155'
 browser.get(url)
 time.sleep(2)
 
+# change category
+select = Select(browser.find_element(By.ID, "entity"))
+select.select_by_value("1")
+time.sleep(2)
+
 elem = browser.find_element(By.ID, "file")
-#scrollclick(elem)
 time.sleep(2)
 
 # Select file - change this path to one which works for your computer, just as an example

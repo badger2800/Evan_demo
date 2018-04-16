@@ -11,6 +11,7 @@ import re
 import datetime
 from difflib import SequenceMatcher
 from random import randint
+import requests
 
 global browser
 global element
@@ -68,9 +69,11 @@ url = 'http://regaliashop.es/admin945fg3h1k/index.php?controller=AdminImport&tok
 browser.get(url)
 time.sleep(2)
 
-elem = browser.find_element(By.ID, "file-add-button")
-scrollclick(elem)
+elem = browser.find_element(By.ID, "file")
+#scrollclick(elem)
+time.sleep(2)
 
-
+# Select file - change this path to one which works for your computer, just as an example
+elem.send_keys('/home/nick/Downloads/first_1000_products.csv')
 
 # browser.close()

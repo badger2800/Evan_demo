@@ -46,30 +46,20 @@ options.add_argument("--start-maximized")
 # Change this path to your relevant chromedriver path
 browser = webdriver.Chrome("/home/nick/PycharmProjects/Evan_demo/chromedriver", chrome_options=options)
 
-url = "http://www.bbc.co.uk"
+url = "http://regaliashop.es/admin945fg3h1k/index.php?controller=AdminLogin&token=e4b8e489175d93edc06c84544e5addb3"
 browser.get(url)
-if browser.title == 'BBC - Home':
-    time.sleep(2)
-    print("Success")
+time.sleep(1)
 
-# Find top story
-elem = browser.find_element(By.CLASS_NAME, "top-story__title")
-
-# Click on top story
-scrollclick(elem)
+# Login
+elem = browser.find_element(By.NAME, "email")
+elem.clear()
+elem.send_keys("blah")
 time.sleep(2)
+elem = browser.find_element(By.NAME, "passwd")
+elem.clear()
+elem.send_keys("Blah")
+time.sleep(4)
 
-# Print title and headline
-print(browser.title)
+elem = browser.find_element(By.NAME, "submitLogin")
 
-headline = browser.find_element_by_class_name("story-body__h1")
-print(headline.text)
-
-
-# Find most popular story
-mp = browser.find_elements_by_class_name("most-popular-list-item__headline")
-
-for m in mp:
-    print(m.text)
-
-browser.close()
+# browser.close()

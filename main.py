@@ -42,6 +42,8 @@ def scroll(element):
 # opens browser and gets to the correct landing page
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
+
+# Change this path to your relevant chromedriver path
 browser = webdriver.Chrome("/home/nick/PycharmProjects/Evan_demo/chromedriver", chrome_options=options)
 
 url = "http://www.bbc.co.uk"

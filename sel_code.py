@@ -57,11 +57,11 @@ def login():
     # Login
     elem = browser.find_element(By.NAME, "email")
     elem.clear()
-    elem.send_keys("ivan@azulgrafik.com")
+    elem.send_keys()
     time.sleep(2)
     elem = browser.find_element(By.NAME, "passwd")
     elem.clear()
-    elem.send_keys("Wb6JGLqNj;")
+    elem.send_keys()
     time.sleep(4)
     elem = browser.find_element(By.NAME, "submitLogin")
     scrollclick(elem)
@@ -80,7 +80,7 @@ def category_choice(category):
     time.sleep(2)
 
 
-def import_files():
+def import_files(file_location):
     # Change delimiters
     elem = browser.find_element(By.NAME, "separator")
     elem.clear()
@@ -95,7 +95,7 @@ def import_files():
     time.sleep(2)
 
     # Select file - change this path to one which works for your computer, just as an example
-    elem.send_keys('/home/nick/Downloads/first_1000_products_fixed.csv')
+    elem.send_keys(file_location)
     time.sleep(3)
 
     # Next Page

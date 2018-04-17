@@ -8,6 +8,7 @@ sel_code.login()
 sel_code.category_choice("Productos")
 
 # TODO Build file loop here
-sel_code.import_files()
+file_location = "/home/nick/Downloads/first_1000_products_fixed.csv"
+sel_code.import_files(file_location)
 
 sel_code.browser_close()
